@@ -5,6 +5,7 @@ import AuthorSignup from './Register/AuthorSignup';
 import AuthorLogin from './Register/AuthorLogin';
 import BookManagement from './component/BookManagement';
 import Check from './component/check';
+import Home from './header/Home';
 
 const App = () => {
   const [loggedInAuthor, setLoggedInAuthor] = useState(null);
@@ -40,6 +41,7 @@ const App = () => {
         <hr />
 
         <Routes>
+          <Route path="/" element={<Home/>}/>
           <Route path="/signup" element={<AuthorSignup />} />
           <Route path="/login" element={<AuthorLogin onLogin={handleLogin} />} />
           {loggedInAuthor && (
