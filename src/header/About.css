@@ -1,0 +1,23 @@
+
+  /* Home.css */
+  body {
+    margin: 0;
+    padding: 0;
+    /* background: url('../images/about-img.jpg') no-repeat center center fixed; */
+    background-size: cover;
+    color: #ffffff; /* Set text color to white or any color that suits your design */
+  }
+  
+  .content {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  h1 {
+    color: yellow;
+  }
+  h2 {
+    color :blue;
+  }
+  
+  

@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import './a_login.css';
 
 const AuthorLogin = ({ onLogin, history }) => {
   const [credentials, setCredentials] = useState({
@@ -26,7 +27,8 @@ const AuthorLogin = ({ onLogin, history }) => {
   };
 
   return (
-    <div>
+    <div className="login-container">
+    <div className="login-form">
       <h2>Author Login</h2>
       <label>Email:</label>
       <input type="text" value={credentials.email} onChange={(e) => setCredentials({ ...credentials, email: e.target.value })} />
@@ -35,6 +37,7 @@ const AuthorLogin = ({ onLogin, history }) => {
       <input type="password" value={credentials.password} onChange={(e) => setCredentials({ ...credentials, password: e.target.value })} />
       <br />
       <button onClick={handleLogin}>Login</button>
+    </div>
     </div>
   );
 };
