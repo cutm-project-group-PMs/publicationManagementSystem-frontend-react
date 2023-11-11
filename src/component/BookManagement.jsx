@@ -1,7 +1,7 @@
 // BookManagement.js
 import React, { useState } from 'react';
 import axios from 'axios';
-import Booklist from './Booklist';
+import BookList from './Booklist';
 
 const BookManagement = ({ authorEmail }) => {
   const [newBook, setNewBook] = useState({
@@ -10,13 +10,23 @@ const BookManagement = ({ authorEmail }) => {
   });
 
   const handleAddBook = () => {
-    axios.post(`http://localhost:8043/api/authors/books?authorEmail=${authorEmail}`, newBook)
-      .then(response => console.log('Book added:', response.data))
-      .catch(error => console.error('Error adding book:', error));
+    axios.post(`http://localhost:8043/api/authors/addbooks?authorEmail=${authorEmail}`, newBook)
+    .then(response => {
+      // Check if the response status is 201 (Created)
+      if (response.status === 201) {
+        alert('Book added successfully:', response.data);
+      } else {
+        // Handle unexpected response status codes
+        console.error('Unexpected response status:', response.status);
+        alert('Failed to add book. Unexpected response status.');
+      }
+    })
+    .catch(error => {
+      console.error('Error adding book:', error);
+      alert('Failed to add book. Check the console for details.');
+    });
+  
   };
-
-  // Implement update and delete book functions as needed
-
   return (
     <div>
       <h2>Book Management</h2>
@@ -30,66 +40,10 @@ const BookManagement = ({ authorEmail }) => {
       </div>
       <button onClick={handleAddBook}>Add Book</button>
       {/* Render the list of books using the BookList component */}
-      <Booklist authorEmail={authorEmail} />
+      <BookList authorEmail={authorEmail} />
     </div>
   );
 };
 
 export default BookManagement;
 
-
-
-
-
-
-
-
-
-// // AddBookForm.jsx
-// import React, { useState } from 'react';
-// import axios from 'axios';
-
-// const AddBookForm = ({ authorEmail, onBookAdded }) => {
-//     const [newBook, setNewBook] = useState({
-//         title: '',
-//         description: '',
-//     });
-
-//     const handleChange = (e) => {
-//         setNewBook({
-//             ...newBook,
-//             [e.target.name]: e.target.value,
-//         });
-//     };
-
-//     const handleSubmit = async (e) => {
-//         e.preventDefault();
-//         try {
-//             const response = await axios.post(`http://localhost:8099/api/authors/books/add?authorEmail=${authorEmail}`, newBook);
-//             console.log(response.data);
-//             // Handle successful book addition
-//             onBookAdded();
-//         } catch (error) {
-//             console.error('Error adding book:', error);
-//             // Handle book addition error
-//         }
-//     };
-
-//     return (
-//         <form onSubmit={handleSubmit}>
-//             <label>
-//                 Title:
-//                 <input type="text" name="title" value={newBook.title} onChange={handleChange} />
-//             </label>
-//             <br />
-//             <label>
-//                 Description:
-//                 <input type="text" name="description" value={newBook.description} onChange={handleChange} />
-//             </label>
-//             <br />
-//             <button type="submit">Add Book</button>
-//         </form>
-//     );
-// };
-
-// export default AddBookForm;

@@ -18,10 +18,11 @@ const AuthorSignup = () => {
         console.log('Author signed up:', response.data);
         // Redirect to login after signup
         //history.push('/login');
-        navigate('/ckeck');
+        navigate('/login');
       })
-      .catch(error => alert('Error signing up:'+error));
+      .catch(error => alert("User already exist on this email : "+ error));
       //console.error('Error signing up:', error)
+     // navigate('/check');   
   };
 
   return (

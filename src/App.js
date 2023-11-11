@@ -25,7 +25,7 @@ const App = () => {
             <li><Link to="/">Home</Link></li>
             {loggedInAuthor ? (
               <>
-                <li><Link to="/books">My Books</Link></li>
+                <li><Link to="/bookm">My Books</Link></li>
                 <li><button onClick={handleLogout}>Logout</button></li>
               </>
             ) : (
@@ -43,7 +43,7 @@ const App = () => {
           <Route path="/signup" element={<AuthorSignup />} />
           <Route path="/login" element={<AuthorLogin onLogin={handleLogin} />} />
           {loggedInAuthor && (
-            <Route path="/books" element={<BookManagement authorEmail={loggedInAuthor.email} />} />
+            <Route path="/bookm" element={<BookManagement authorEmail={loggedInAuthor.email} />} />
           )}
           <Route path="/check" element={<Check/>}/>
         </Routes>

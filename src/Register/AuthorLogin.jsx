@@ -15,10 +15,14 @@ const AuthorLogin = ({ onLogin, history }) => {
       .then(response => {
         onLogin(response.data);
         // Redirect to book list after login
-        history.push('/books');
-       //navigate('/login');
+       // history.push('/books');
+       navigate('/bookm');
       })
-      .catch(error => console.error('Error logging in:', error));
+      .catch(error =>  {
+        // Handle error and navigate to signup
+        alert('Error logging in:'+error);
+        navigate('/signup');
+      });
   };
 
   return (
