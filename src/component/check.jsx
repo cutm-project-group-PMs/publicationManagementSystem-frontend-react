@@ -8,7 +8,7 @@ const check = () => {
   
   return (
     <div>
-      just checking
+      just checking   fo code
     </div>
   )
 }
