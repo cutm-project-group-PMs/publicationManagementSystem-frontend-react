@@ -17,7 +17,7 @@ const AuthorSignup = () => {
     axios.post('http://localhost:8043/api/authors/signup', author)
       .then(response => {
         console.log('Author signed up:', response.data);
-        navigate('/login');
+        navigate('/Authorlogin');
       })
       .catch(error => alert("User already exists with this email: " + error));
   };
