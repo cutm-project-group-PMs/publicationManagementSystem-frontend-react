@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import AllBook from '../component/AllBook';
 
-const StudentLogin = () => {
+const StudentLogin = ({ onLogin, history }) => {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -16,8 +16,9 @@ const StudentLogin = () => {
       }
     })
       .then(response => {
+        onLogin(response.data);
         console.log('User logged in successfully:', response.data);
-        alert("yes he is present")
+       // alert("yes he is present")
         navigate('/allBooks');
       })
       .catch(error => {
