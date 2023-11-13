@@ -10,7 +10,7 @@ const AllBook = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Fetch all books from the server when the component mounts
+    // Fetch all books from the server when the component mountssss
     axios.get('http://localhost:8043/api/getBooks')
       .then(response => {
         setBooks(response.data);

@@ -2,3 +2,66 @@
     max-height: 500px; /* Adjust the height as needed */
     overflow-y: auto;
 }
+/* AllBook.css */
+
+/* Container styles */
+.scrollable-container {
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    margin-top: 20px;
+  }
+  
+  /* Table styles */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  /* Search input styles */
+  input[type="text"] {
+    padding: 10px;
+    margin-right: 10px;
+  }
+  
+  button {
+    padding: 10px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Heading styles */
+  h2 {
+    color: #333;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 600px) {
+    th, td {
+      font-size: 14px;
+    }
+  
+    input[type="text"],
+    button {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
+  
