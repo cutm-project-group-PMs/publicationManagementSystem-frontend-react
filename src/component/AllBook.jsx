@@ -49,6 +49,7 @@ const AllBook = () => {
               <th>Title</th>
               <th>Author Email</th>
               <th>Book Description</th>
+              <th>Book Link</th>
               {/* Add more columns based on your book structure */}
               {/* Example: <th>Published Date</th> */}
             </tr>
@@ -60,7 +61,8 @@ const AllBook = () => {
                 <td>{book.title && typeof book.title === 'string' ? book.title : 'N/A'}</td>
                 <td>{book.author && typeof book.author === 'string' ? book.author : (book.author && book.author.email ? book.author.email : 'N/A')}</td>
                 <td>{book.description && typeof book.description === 'string' ? book.description : 'N/A'}</td>
-
+                <td>{book.link && typeof book.link === 'string' ? <a href={book.link} target="_blank" rel="noopener noreferrer">Link</a> : 'N/A'}</td>
+                
                 {/* Add more cells based on your book structure */}
                 {/* Example: <td>{book.publishedDate && typeof book.publishedDate === 'string' ? book.publishedDate : 'N/A'}</td> */}
               </tr>
