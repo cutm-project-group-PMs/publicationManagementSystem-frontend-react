@@ -76,3 +76,19 @@ const AllBook = () => {
 
 export default AllBook;
 
+
+
+{/* <td>
+    {book.link && typeof book.link === 'string' ? (
+        <a
+            href="#"
+            onClick={(e) => {
+                e.preventDefault();
+                window.open(book.link, '_blank');
+            }}
+        >
+            Link
+        </a>
+    ) : 'N/A'}
+</td> */}
+
