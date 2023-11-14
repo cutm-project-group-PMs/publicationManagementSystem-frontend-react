@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import './AllBook.css';
 
 const BookList = ({ authorEmail }) => {
   const [books, setBooks] = useState([]);
@@ -65,9 +66,9 @@ const BookList = ({ authorEmail }) => {
   };
 
   return (
-    <div>
+    <div className='booklist'>
       <h3>Book List</h3>
-      <button onClick={() => fetchBooks()}>Fetch Books</button>
+      <button  className='fetch-btn' onClick={() => fetchBooks()}>Fetch Books</button>
       <table>
         <thead>
           <tr>
@@ -85,8 +86,8 @@ const BookList = ({ authorEmail }) => {
               <td>{book.title}</td>
               <td>{book.description}</td>
               <td>
-                <button onClick={() => openUpdateModal(book)}>Update</button>
-                <button onClick={() => handleDeleteBook(book.id)}>Delete</button>
+                <button className='fetch-btn-update' onClick={() => openUpdateModal(book)}>Update</button>
+                <button className='fetch-btn-delete' onClick={() => handleDeleteBook(book.id)}>Delete</button>
               </td>
               <td>{book.link ? <a href={book.link} target="_blank" rel="noopener noreferrer">Link</a> : 'N/A'}</td>
             </tr>
