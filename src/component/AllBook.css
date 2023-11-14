@@ -38,7 +38,7 @@
   button {
     padding: 10px;
     background-color: #4caf50;
-    color: white;
+    color: rgb(255, 255, 255);
     border: none;
     cursor: pointer;
   }
@@ -50,6 +50,9 @@
   /* Heading styles */
   h2 {
     color: #333;
+  }
+  h3 {
+    color: blue;
   }
   
   /* Responsive styles */
@@ -64,4 +67,11 @@
       margin-bottom: 10px;
     }
   }
-  
+
+  .booklist h3{
+    color: green;
+  }
+ 
+  /* .fetch-btn{
+    color :chartreuse;
+  } */

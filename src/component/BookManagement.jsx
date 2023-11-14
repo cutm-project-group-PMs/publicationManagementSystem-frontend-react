@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import BookList from './Booklist';
+import GetAuthorId from './GetAuthorId';
 import './BookManagement.css'; // Import the CSS file
 
 const BookManagement = ({ authorEmail }) => {
@@ -53,6 +54,12 @@ const BookManagement = ({ authorEmail }) => {
       </div>
       {/* Render the list of books using the BookList component */}
       <BookList authorEmail={authorEmail} />
+
+        {/* to show author id to the author */}
+        <div>
+          <GetAuthorId authorEmail={authorEmail} />
+        </div>
+
     </div>
   );
 };
